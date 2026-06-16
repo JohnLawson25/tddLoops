@@ -146,7 +146,7 @@ describe("getGrowthTime", function () {
   it("returns correct time if start < target", function () {
     expect(getGrowthTime(5, 78)).toBe(80);
   });
-});
+})
 
 describe("getCompoundTime", function () {
   it("returns undefined if start <= 0", function () {
@@ -171,7 +171,7 @@ describe("getCompoundTime", function () {
   });
 });
 
-describe("moveWater", function () {
+describe ("moveWater", function() {
   it("returns undefined if colander <= 0", () => {
     expect(moveWater(0, 10)).toBeUndefined();
     expect(moveWater(-3, 10)).toBeUndefined();

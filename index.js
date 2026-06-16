@@ -11,8 +11,17 @@
  * echo("test", 1); // "test"
  */
 export function echo(word, n) {
-  // TODO
-}
+  const str = word;
+  const num = n;
+  let result = "";
+  for (let i = 0; i < num; i++ ){
+    result += str;
+    }
+    return result;
+  }
+
+
+
 
 /**
  * @param {string} word - The word to repeat.
@@ -26,9 +35,28 @@ export function echo(word, n) {
  * @example
  * echoWithSpace("test", 1); // "test"
  */
+
 export function echoWithSpace(word, n) {
-  // TODO
+  const str = word;
+  let result = "";
+  for (let i = 0; i < n; i++){
+    if (n < 0){
+      return result;
+    }
+    if(str === ""){
+      return result;
+    }
+    if (i === 0){
+      result += str;
+    }
+    else{
+      result += ' ' + str;
+    }
+  }
+  return result;
 }
+
+
 
 /**
  * @param {number} n - The number to stop at
@@ -42,8 +70,15 @@ export function echoWithSpace(word, n) {
  * sumTo(100); // 5050
  */
 export function sumTo(n) {
-  // TODO
+  let number = 0;
+  for(let i = 0; i <= n; i++){
+    number = (number + Math.abs(i));
+  }
+  return number;
 }
+
+
+
 
 /**
  * @param {number} a - The starting integer.
@@ -58,7 +93,11 @@ export function sumTo(n) {
  * sumFromTo(2, 2); // 2
  */
 export function sumFromTo(a, z) {
-  // TODO
+ let sum = 0;
+  for (let i = a; i <= z; i++){
+    sum = sum + i;
+  }
+  return sum;
 }
 
 /**
@@ -73,7 +112,9 @@ export function sumFromTo(a, z) {
  * countdown(5); // logs 5, 4, 3, 2, 1
  */
 export function countdown(n) {
-  // TODO
+  for( let i = n; i >= 1; i--){
+    console.log(i)
+  }
 }
 
 /**
@@ -88,8 +129,16 @@ export function countdown(n) {
  * sumOddsToN(1); // 1
  */
 export function sumOddsToN(n) {
-  // TODO
-}
+  let sum = 0;
+  for(let i = 1; i <= n; i++){
+    if (i % 2 !== 0){
+      sum +=  i;
+    }
+  }
+    return sum;
+  }
+
+q
 
 /**
  * A petri dish starts with a certain number of bacteria cells.
@@ -108,8 +157,19 @@ export function sumOddsToN(n) {
  * getGrowthTime(5, 78); // 80
  */
 export function getGrowthTime(start, target) {
-  // TODO
+  let number = 0;
+  let total = start;
+  if( total <= 0){
+      return undefined
+    }
+  while(total < target){
+    total = total * 2;
+    number++
+  }
+  return (number * 20);
+
 }
+
 
 /**
  * The amount of money in a savings account grows by a certain rate every year.
@@ -128,8 +188,19 @@ export function getGrowthTime(start, target) {
  * getCompoundTime(30000, 0.04, 50000); // 14
  */
 export function getCompoundTime(start, rate, target) {
-  // TODO
+  if(start <= 0 || rate <= 0){
+    return undefined
+  }
+  let money = start;
+  let years = 0;
+  while(money < target){
+    money = money + (money * rate);
+    years++
+  }
+  return years;
 }
+
+
 
 /**
  * An empty bucket sits some distance away from a water faucet.
@@ -154,7 +225,19 @@ export function getCompoundTime(start, rate, target) {
  * moveWater(7, 3); // 1
  */
 export function moveWater(colander, bucket) {
-  // TODO
+  if (colander <= 0){
+    return undefined
+  }
+  let trips = 0;
+  let water = 0;
+  while(water < bucket){
+    water += colander;
+    trips++
+    if(colander > 1){
+      colander--;
+    }
+  }
+  return trips;
 }
 
 /**
@@ -174,5 +257,21 @@ export function moveWater(colander, bucket) {
  * fizzbuzz(15); // logs 1, 2, fizz, 4, buzz, fizz, 7, 8, fizz, buzz, 11, fizz, 13, 14, fizzbuzz
  */
 export function fizzbuzz(n) {
-  // TODO
+  for(let i = 1; i <= n; i++){
+    
+    if ((i % 3 === 0) && (i % 5 === 0)){
+      console.log("fizzbuzz");
+    }
+    else if(i % 3 === 0){
+      console.log("fizz");
+    }
+    else if(i % 5 === 0){
+      console.log("buzz");
+    }
+    else{
+      console.log(i);
+    }
+    
+  }
+
 }
